@@ -1,6 +1,9 @@
 let scores = []
 let players = 0
 let element = undefined
+let scoreButtonOne = 1
+let scoreButtonTwo = 2
+let scoreButtonThree = 6
 
 function scoreUp (size, team) {scores[team] += size
     drawScore(team)
@@ -60,7 +63,7 @@ function addPlayer() {
 
     let btnCont = document.getElementById('button' + players.toString() + 'Num'  + players.toString())
     btnCont.innerHTML += 
-    '<button onclick="scoreUp(1,' + players.toString() +')">+1</button> <button onclick="scoreUp(3,' + players.toString() +')">+3</button> <button onclick="scoreUp(6,' + players.toString() +')">+6</button> <button onclick="resetScore(' + players.toString() +')">Reset</button>'
+    '<button onclick="scoreUp(' + scoreButtonOne.toString() + ',' + players.toString() +')">' + scoreButtonOne.toString() + '</button> <button onclick="scoreUp(' + scoreButtonTwo.toString() + ',' + players.toString() +')">' + scoreButtonTwo.toString() + '</button> <button onclick="scoreUp(' + scoreButtonThree.toString() + ',' + players.toString() +')">' + scoreButtonThree.toString() + '</button> <button onclick="resetScore(' + players.toString() +')">Reset</button>'
 
     players ++
     scores.push(0)
