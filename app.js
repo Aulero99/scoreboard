@@ -60,7 +60,6 @@ function addPlayer() {
 
 
 function remPlayer(){
-
     if (players<=0){
         return
     }
@@ -74,5 +73,10 @@ function remPlayer(){
 
 
 function resetPlayers(){
-
+    for (let i = 0; i<players; players--){
+        let element = document.getElementById('player' + (players - 1).toString());
+        element.remove()
+        scores.splice(scores.length)
+        scores = scores.slice(0,-1)
+    }
 }
