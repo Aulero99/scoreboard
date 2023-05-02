@@ -2,7 +2,7 @@ let scores = []
 let players = 0
 let element = undefined
 let scoreButtonOne = 1
-let scoreButtonTwo = 2
+let scoreButtonTwo = 3
 let scoreButtonThree = 6
 
 function scoreUp (size, team) {scores[team] += size
