@@ -1,17 +1,31 @@
 let scores = []
 let players = 0
 let element = undefined
+
 let scoreButtonOne = 1
 let scoreButtonTwo = 2
 let scoreButtonThree = -1
 
-function scoreUp (size, team) {scores[team] += size
+function scoreUp (size, team) {
+    scores[team] += size
     drawScore(team)
+    totalScore()
+}
+
+function totalScore() {
+    if (scores.length <= 0) {return}
+    let sum = 0
+
+    for (let i = 0; i<(scores.length); i++){
+        sum += scores[i]
+    }
+    console.log ('The total score is ' + sum)
 }
 
 function resetScore(team) {
     scores[team] = 0
     drawScore(team)
+    totalScore()
 }
 
 function resetAllScore (){
@@ -21,6 +35,8 @@ function resetAllScore (){
         scores[i] = 0
         drawScore(i)
     }
+
+    console.log('All scores reset')
 }
 
 function drawScore(team) {
