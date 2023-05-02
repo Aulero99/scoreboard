@@ -28,6 +28,7 @@
 
 .scorecard-buttons {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -36,10 +37,13 @@
 
 .scorecard-buttons button {
     border-width: 0.18rem ;
-    width: 30%;
+    width: 22%;
+    min-width: 3rem;
+    height: 2.3rem;
     border-color: red;
     border-radius: 0.2rem;
     background-color: white;
     color: black;
-    font-weight: bolder;
+    font-weight: bold;
+    font-size: 0.8rem
 }

@@ -1,11 +1,16 @@
 let scores = []
 
-function scoreUp (score, team) {
-    scores[team] += score
+function scoreUp (size, team) {
+    scores[team] += size
     drawScore(team)
 }
 
-function resetScore (){
+function resetScore(team) {
+    scores[team] = 0
+    drawScore(team)
+}
+
+function resetAllScore (){
     if (scores.length <= 0) {
         return
     }
@@ -59,7 +64,7 @@ function addPlayer() {
 
     let btnCont = document.getElementById('button' + players.toString() + 'Num'  + players.toString())
     btnCont.innerHTML += 
-    '<button onclick="scoreUp(1,' + players.toString() +')">+1</button> <button onclick="scoreUp(3,' + players.toString() +')">+3</button> <button onclick="scoreUp(6,' + players.toString() +')">+6</button>'
+    '<button onclick="scoreUp(1,' + players.toString() +')">+1</button> <button onclick="scoreUp(3,' + players.toString() +')">+3</button> <button onclick="scoreUp(6,' + players.toString() +')">+6</button> <button onclick="resetScore(' + players.toString() +')">Reset</button>'
 
     players ++
     scores.push(0)
