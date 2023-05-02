@@ -29,25 +29,32 @@ function addPlayer() {
     let playerNum = document.createElement('div')
     playerNum.id = ('player' + players.toString())
     playerNum.classList.add('col-4')
-    playerNum.classList.add('card')
-    playerNum.classList.add('p-3')
+    playerNum.classList.add('scorecard-container')
     element = document.getElementById('board')
     element.lastChild.after(playerNum)
 
+    let playerCard = document.createElement('div')
+    playerCard.id = ('card' + players.toString())
+    playerCard.classList.add('scorecard')
+    element = document.getElementById('player' + players.toString())
+    element.appendChild(playerCard)
+
     let playerH1 = document.createElement('h1')
     playerH1.innerText = 'Player ' + (players + 1).toString()
-    element = document.getElementById('player' + players.toString())
+    element = document.getElementById('card' + players.toString())
     element.appendChild(playerH1)
 
     let playerSc = document.createElement('div')
     playerSc.id = ('score' + players.toString())
     playerSc.innerText = '0'
-    element = document.getElementById('player' + players.toString())
+    playerSc.classList.add('current-score')
+    element = document.getElementById('card' + players.toString())
     element.lastChild.after(playerSc)
 
     let playerBt1 = document.createElement('div')
     playerBt1.id = ('button' + players.toString() + 'Num'  + players.toString())
-    element = document.getElementById('player' + players.toString())
+    playerBt1.classList.add('scorecard-buttons')
+    element = document.getElementById('card' + players.toString())
     element.lastChild.after(playerBt1)
 
     let btnCont = document.getElementById('button' + players.toString() + 'Num'  + players.toString())
@@ -73,6 +80,11 @@ function remPlayer(){
 
 
 function resetPlayers(){
+    if (players<=0){
+        return
+    }
+
+
     for (let i = 0; i<players; players--){
         let element = document.getElementById('player' + (players - 1).toString());
         element.remove()
