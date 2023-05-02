@@ -32,7 +32,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 0.8rem 0.5rem;
 }
 
 .scorecard-buttons button {

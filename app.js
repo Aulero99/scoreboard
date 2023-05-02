@@ -1,7 +1,8 @@
 let scores = []
+let players = 0
+let element = undefined
 
-function scoreUp (size, team) {
-    scores[team] += size
+function scoreUp (size, team) {scores[team] += size
     drawScore(team)
 }
 
@@ -11,9 +12,8 @@ function resetScore(team) {
 }
 
 function resetAllScore (){
-    if (scores.length <= 0) {
-        return
-    }
+    if (scores.length <= 0) {return}
+
     for (let i = 0; i<(scores.length); i++){
         scores[i] = 0
         drawScore(i)
@@ -24,10 +24,6 @@ function drawScore(team) {
     document.getElementById('score' + team.toString()).innerText = scores[team].toString()
 
 }
-
-
-let players = 0
-let element = undefined
 
 function addPlayer() {
     
@@ -70,11 +66,8 @@ function addPlayer() {
     scores.push(0)
 }
 
-
 function remPlayer(){
-    if (players<=0){
-        return
-    }
+    if (players<=0){return}
 
     let element = document.getElementById('player' + (players - 1).toString());
     element.remove()
@@ -83,12 +76,8 @@ function remPlayer(){
     scores = scores.slice(0,-1)
 }
 
-
 function resetPlayers(){
-    if (players<=0){
-        return
-    }
-
+    if (players<=0){return}
 
     for (let i = 0; i<players; players--){
         let element = document.getElementById('player' + (players - 1).toString());
